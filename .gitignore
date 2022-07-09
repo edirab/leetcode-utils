@@ -1,6 +1,7 @@
 .vscode/
 build/
 _wip/
+visualize/
 
 *.out
 Makefile

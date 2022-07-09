@@ -7,7 +7,7 @@ TreeNode *build_example_tree()
     TreeNode *C_node = new TreeNode( 8 );
     TreeNode *D_node = new TreeNode( 11 );
     TreeNode *E_node = new TreeNode( 13 );
-    TreeNode *F_node = new TreeNode( 4 );
+    TreeNode *F_node = new TreeNode( 14 );
     TreeNode *G_node = new TreeNode( 7 );
     TreeNode *H_node = new TreeNode( 2 );
     TreeNode *I_node = new TreeNode( 1 );
