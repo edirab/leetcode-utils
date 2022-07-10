@@ -1,5 +1,7 @@
 .vscode/
 build/
+build_debug/
+
 _wip/
 visualize/
 

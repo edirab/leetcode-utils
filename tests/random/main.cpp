@@ -29,29 +29,30 @@ void test_ints()
 
 void test_uniquenss()
 {
-    cout << "-- test_uniquenss \n";
-    RandomGenerator* r = new RandomGenerator(0, 100, 30);
-    auto v1 = r->ints();
-    cout << "Seq 1: \n";
+    cout << "-- test unique ints \n";
+    RandomGenerator* r = new RandomGenerator(0, 100, 10);
+    auto v1 = r->unique_ints();
     print_vector(v1);
 
-    vector<int> res;
-    set<int> unique;
-    for (auto elem: v1)
-        unique.insert(elem);
-
-    for (auto elem : unique)
-        res.push_back(elem);
-
-    print_vector(res);
     return;
 }
 
 
+void test_uniquenss_sorted()
+{
+    cout << "-- test unique sorted ints \n";
+    RandomGenerator* r = new RandomGenerator(0, 100, 10);
+    auto v1 = r->unique_sorted_ints();
+    print_vector(v1);
+
+    return;
+}
+
 int main()
 {
     //test_ints();
-    test_uniquenss();
+    //test_uniquenss();
+    test_uniquenss_sorted();
 
     return 0;
 }

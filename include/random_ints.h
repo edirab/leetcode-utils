@@ -9,10 +9,10 @@ using std::unordered_set;
 
 /*
     Those numbers are truely random from run to run
+    unless you will pass debug=true parameter
 */
 class RandomGenerator
 {
-
     public:
         RandomGenerator();
         RandomGenerator(int from, int to, int n) :
@@ -25,11 +25,14 @@ class RandomGenerator
     */
     vector<int> ints(bool debug = false);
 
+    /*
+        Generates sequence of n in [from, to) range without repetitions
+    */
     vector<int> unique_ints(bool debug = false);
 
     /*
-        TODO: reqork this shit
-        Generates sorted sequence of <whatever> in [from, to) range
+        Generates sorted sequence of n in [from, to) range without repetitions
+        Suitable for bulding height-balanced trees, testing binary search etc.
     */
     vector<int> unique_sorted_ints(bool debug = false);
 

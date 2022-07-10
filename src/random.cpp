@@ -25,23 +25,65 @@ vector<int> RandomGenerator::ints(bool debug)
 
 vector<int> RandomGenerator::unique_ints(bool debug)
 {
+    vector<int> result;
+    std::mt19937* gen = nullptr;
 
+    if (!debug)
+    {
+        std::random_device rd; // obtain a random number from hardware
+        gen = new std::mt19937(rd());// seed the generator
+    }
+    else
+    {
+        gen = new std::mt19937();
+    }
+
+    std::uniform_int_distribution<> distr(this->from, this->to - 1); // define the range
+    unordered_set<int> unique;
+
+    while( unique.size() < n )
+    {
+        int val =  distr(*gen);
+        if ( unique.count(val) == 0 )
+        {
+            result.push_back( val );
+            unique.insert(val);
+        }
+    }
+    return result;
 }
+
 
 vector<int> RandomGenerator::unique_sorted_ints(bool debug)
 {
-    const auto v = this->ints(debug);
-    vector<int> res;
+    vector<int> result;
+    std::mt19937* gen = nullptr;
+
+    if (!debug)
+    {
+        std::random_device rd; // obtain a random number from hardware
+        gen = new std::mt19937(rd());// seed the generator
+    }
+    else
+    {
+        gen = new std::mt19937();
+    }
+
+    std::uniform_int_distribution<> distr(this->from, this->to - 1);
     set<int> unique;
 
-    for (auto elem: v)
+    while( unique.size() < n )
     {
-        unique.insert(elem);
+        int val =  distr(*gen);
+        if ( unique.count(val) == 0 )
+        {
+            unique.insert(val);
+        }
     }
 
     for (auto elem : unique)
     {
-        res.push_back(elem);
+        result.push_back(elem);
     }
-    return res;
+    return result;
 }
