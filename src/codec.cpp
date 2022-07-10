@@ -8,7 +8,7 @@
     #desereialize
 */
 
-#include "codec.h"
+#include "leetcode_utils/codec.h"
 
 vector<int> Codec::parse_string(const string &data)
 {

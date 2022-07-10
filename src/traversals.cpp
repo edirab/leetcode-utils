@@ -1,5 +1,5 @@
 
-#include "traversals.h"
+#include "leetcode_utils/traversals.h"
 
 void Printer::in_order(TreeNode *root) 
 {
@@ -34,6 +34,41 @@ void Printer::post_order(TreeNode *root)
     cout << root->val << " ";
     return;
 }
+
+void Printer::breadt_first(TreeNode* root)
+{
+    int prev_level = 0;
+    int level = 0;
+    if (root == nullptr)
+        return;
+
+    queue <pair<TreeNode*, int>> q;
+    q.push( std::make_pair(root, 1));
+    level = 1;
+
+    while(q.size())
+    {
+        auto curr = q.front();
+        q.pop();
+
+        if (curr.first != nullptr)
+        {
+            level = curr.second;
+
+            if (level != prev_level)
+            {
+                prev_level = level;
+                cout << "\nL" << level << ": ";
+            }
+            cout << curr.first->val << " ";
+            q.push( std::make_pair( curr.first->left, curr.second + 1 ) );
+            q.push( std::make_pair( curr.first->right, curr.second + 1 ) );
+        }
+    }
+    cout << "\n";
+    return;
+}
+
 
 void Getter::do_inorder(TreeNode *root, vector<int> &result) 
 {
