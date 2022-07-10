@@ -1,4 +1,4 @@
-#include "random_ints.h"
+#include "leetcode_utils/random_ints.h"
 
 vector<int> RandomGenerator::ints(bool debug)
 {
@@ -53,7 +53,6 @@ vector<int> RandomGenerator::unique_ints(bool debug)
     return result;
 }
 
-
 vector<int> RandomGenerator::unique_sorted_ints(bool debug)
 {
     vector<int> result;
@@ -86,4 +85,12 @@ vector<int> RandomGenerator::unique_sorted_ints(bool debug)
         result.push_back(elem);
     }
     return result;
+}
+
+void print_vector(vector<int> &v)
+{
+    for (auto& elem : v)
+        cout << elem << " ";
+    cout << "\n";
+    return;
 }

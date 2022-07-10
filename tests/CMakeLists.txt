@@ -13,16 +13,22 @@ add_executable( test_random.out
 random/main.cpp
 )
 
-target_link_libraries(
-test_codec.out PRIVATE leetcode_utils
+add_executable( generate_test.out
+generator/main.cpp
 )
 
 target_link_libraries(
-test_traversals.out PRIVATE leetcode_utils
+    test_codec.out PRIVATE leetcode_utils
 )
 
 target_link_libraries(
-test_random.out PRIVATE leetcode_utils
+    test_traversals.out PRIVATE leetcode_utils
 )
 
+target_link_libraries(
+    test_random.out PRIVATE leetcode_utils
+)
 
+target_link_libraries(
+    generate_test.out PRIVATE leetcode_utils
+)

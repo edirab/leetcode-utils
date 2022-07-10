@@ -1,15 +1,7 @@
 #include <iostream>
-#include <random_ints.h>
+#include "leetcode_utils/random_ints.h"
 
 using std::cout;
-
-void print_vector(vector<int> v)
-{
-    for (auto& elem : v)
-        cout << elem << " ";
-    cout << "\n";
-    return;
-}
 
 void test_ints()
 {

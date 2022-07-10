@@ -1,8 +1,12 @@
+#pragma once
+
 #include <vector>
 #include <random>
 #include <set>
 #include <unordered_set>
+#include <iostream>
 
+using std::cout;
 using std::vector;
 using std::set;
 using std::unordered_set;
@@ -41,3 +45,6 @@ class RandomGenerator
         int to{100};
         int n{10};
 };
+
+
+void print_vector(vector<int> &v);
