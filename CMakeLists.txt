@@ -10,6 +10,7 @@ add_library( leetcode_utils SHARED
     src/traversals.cpp
     src/generator.cpp
     src/random.cpp
+    src/visualize.cpp
 )
 
 target_include_directories( leetcode_utils
