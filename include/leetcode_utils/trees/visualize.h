@@ -13,7 +13,11 @@ using std::stack;
 class Visualizer
 {
     public:
-        string get(TreeNode* root, bool draw_nulls=true);
+        /*
+            Converts tree to dot language representation.
+            Suitable for graphviz
+        */
+        string to_dot(TreeNode* root, bool draw_nulls=true);
 
     private:
 

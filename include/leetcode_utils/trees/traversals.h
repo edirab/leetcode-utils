@@ -14,9 +14,16 @@ using std::pair;
 class Printer
 {
 public:
+    // Prints nodes in order (left, root, right)
     void in_order(TreeNode *root);
+
+    // Prints nodes in preorder (root, left, right)
     void pre_order(TreeNode *root);
+
+    // Prints nodes in postorder (left, right, root)
     void post_order(TreeNode *root);
+
+    // Print nodes in level order
     void breadt_first(TreeNode* root);
 };
 

@@ -1,7 +1,7 @@
-#include "leetcode_utils/generator.h"
+#include "leetcode_utils/trees/generator.h"
 
 
-TreeNode* build_example_tree() 
+TreeNode* Generator::build_example_tree() 
 {
     TreeNode *A_node = new TreeNode( 5 );
     TreeNode *B_node = new TreeNode( 4 );
@@ -29,7 +29,7 @@ TreeNode* build_example_tree()
 }
 
 
-void insert( TreeNode** root, int val )
+void Generator::insert( TreeNode** root, int val )
 {
     if (*root == nullptr)
     {
@@ -59,7 +59,7 @@ void insert( TreeNode** root, int val )
 }
 
 
-TreeNode* create( vector<int> & values )
+TreeNode* Generator::create( vector<int> & values )
 {
     RandomGenerator* rg = new RandomGenerator(0, 20, 8);
 
@@ -69,7 +69,7 @@ TreeNode* create( vector<int> & values )
     int i = 0;
     while( i < values.size())
     {
-        insert(&root, values[i]);
+        this->insert(&root, values[i]);
         i++;
     }
     return root;

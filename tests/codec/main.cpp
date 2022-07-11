@@ -9,7 +9,7 @@
     -1000 <= Node.val <= 1000
 */
 
-#include "codec.h"
+#include "leetcode_utils/trees/codec.h"
 
 void test_serialize()
 {

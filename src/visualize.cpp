@@ -1,6 +1,6 @@
-#include "leetcode_utils/visualize.h"
+#include "leetcode_utils/trees/visualize.h"
 
-string Visualizer::get(TreeNode* root, bool draw_nulls)
+string Visualizer::to_dot(TreeNode* root, bool draw_nulls)
 {
     string res = "digraph G {\n";
     

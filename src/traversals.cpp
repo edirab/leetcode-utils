@@ -1,5 +1,5 @@
 
-#include "leetcode_utils/traversals.h"
+#include "leetcode_utils/trees/traversals.h"
 
 void Printer::in_order(TreeNode *root) 
 {

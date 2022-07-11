@@ -1,13 +1,13 @@
-#include "leetcode_utils/generator.h"
-#include "leetcode_utils/traversals.h"
+#include "leetcode_utils/trees/generator.h"
+#include "leetcode_utils/trees/traversals.h"
 #include "leetcode_utils/random_ints.h"
 
 
 
 int main()
 {
-
-    TreeNode* root = build_example_tree();
+    Generator g;
+    TreeNode* root = g.build_example_tree();
     Printer p;
 
     p.pre_order(root); cout << "\n";
@@ -18,7 +18,7 @@ int main()
     auto vals = rg->unique_ints(true);
 
     print_vector(vals);
-    TreeNode* root_2 = create(vals);
+    TreeNode* root_2 = g.create(vals);
     cout << "Tree created\n";
     p.breadt_first(root_2);
 

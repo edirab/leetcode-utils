@@ -1,6 +1,7 @@
 .vscode/
 build/
 build_debug/
+build_ninja/
 
 _wip/
 /visualize/
