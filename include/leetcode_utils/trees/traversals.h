@@ -11,6 +11,9 @@ using std::vector;
 using std::queue;
 using std::pair;
 
+namespace leetcode_utils
+{
+
 class Printer
 {
 public:
@@ -35,3 +38,5 @@ class Getter
     private:
         void do_inorder(TreeNode *root, vector<int> &result) ;
 };
+
+} // namespace leetcode_utils

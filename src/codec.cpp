@@ -10,6 +10,11 @@
 
 #include "leetcode_utils/trees/codec.h"
 
+//using namespace leetcode_utils;
+
+namespace leetcode_utils 
+{
+
 vector<int> Codec::parse_string(const string &data)
 {
     vector<int> nodes;
@@ -133,6 +138,4 @@ TreeNode* Codec::deserialize(string data)
     return root;
 }
 
-
-
-
+} // namespace leetcode_utils

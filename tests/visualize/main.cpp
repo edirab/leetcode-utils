@@ -2,6 +2,11 @@
 #include "leetcode_utils/trees/generator.h"
 #include "leetcode_utils/random_ints.h"
 
+using leetcode_utils::Generator;
+using leetcode_utils::RandomGenerator;
+using leetcode_utils::Visualizer;
+using leetcode_utils::TreeNode;
+
 int main()
 {
     RandomGenerator* rg = new RandomGenerator(0, 20, 10);

@@ -11,6 +11,9 @@ using std::vector;
 using std::set;
 using std::unordered_set;
 
+namespace leetcode_utils
+{
+
 /*
     Those numbers are truely random from run to run
     unless you will pass debug=true parameter
@@ -48,3 +51,5 @@ class RandomGenerator
 
 
 void print_vector(vector<int> &v);
+
+} // namespace leetcode_utils

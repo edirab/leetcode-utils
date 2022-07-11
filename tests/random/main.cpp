@@ -2,6 +2,8 @@
 #include "leetcode_utils/random_ints.h"
 
 using std::cout;
+using leetcode_utils::RandomGenerator;
+using leetcode_utils::print_vector;
 
 void test_ints()
 {
@@ -22,7 +24,8 @@ void test_ints()
 void test_uniquenss()
 {
     cout << "-- test unique ints \n";
-    RandomGenerator* r = new RandomGenerator(0, 100, 10);
+    //RandomGenerator* r = new RandomGenerator(0, 100, 10);
+    RandomGenerator* r = new RandomGenerator(0, 10, 20); // infinate loop, the are only 10 unique nums in a range
     auto v1 = r->unique_ints();
     print_vector(v1);
 
@@ -43,8 +46,8 @@ void test_uniquenss_sorted()
 int main()
 {
     //test_ints();
-    //test_uniquenss();
-    test_uniquenss_sorted();
+    test_uniquenss();
+    //test_uniquenss_sorted();
 
     return 0;
 }

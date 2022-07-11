@@ -1,6 +1,11 @@
 
 #include "leetcode_utils/trees/traversals.h"
 
+// using leetcode_utils::Printer;
+// using leetcode_utils::Getter;
+namespace leetcode_utils 
+{
+
 void Printer::in_order(TreeNode *root) 
 {
     if (root == nullptr)
@@ -93,3 +98,5 @@ vector<int> Getter::inorderTraversal(TreeNode* root)
     this->do_inorder(root, result);
     return result;
 }
+
+} // namespace leetcode_utils

@@ -1,5 +1,10 @@
 #include "leetcode_utils/trees/generator.h"
 
+// using leetcode_utils::Generator;
+// using leetcode_utils::TreeNode;
+
+namespace leetcode_utils 
+{
 
 TreeNode* Generator::build_example_tree() 
 {
@@ -61,9 +66,6 @@ void Generator::insert( TreeNode** root, int val )
 
 TreeNode* Generator::create( vector<int> & values )
 {
-    RandomGenerator* rg = new RandomGenerator(0, 20, 8);
-
-    //vector<int> nums = rg->unique_ints(true);
     TreeNode* root = nullptr;
 
     int i = 0;
@@ -74,3 +76,5 @@ TreeNode* Generator::create( vector<int> & values )
     }
     return root;
 }
+
+} // namespace leetcode_utils

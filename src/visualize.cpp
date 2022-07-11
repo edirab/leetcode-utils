@@ -1,5 +1,10 @@
 #include "leetcode_utils/trees/visualize.h"
 
+//using leetcode_utils::Visualizer;
+
+namespace leetcode_utils 
+{
+
 string Visualizer::to_dot(TreeNode* root, bool draw_nulls)
 {
     string res = "digraph G {\n";
@@ -47,3 +52,5 @@ string Visualizer::to_dot(TreeNode* root, bool draw_nulls)
     res += "}\n";
     return res;
 }
+
+} // namespace leetcode_utils

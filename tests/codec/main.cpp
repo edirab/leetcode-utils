@@ -11,6 +11,8 @@
 
 #include "leetcode_utils/trees/codec.h"
 
+using namespace leetcode_utils;
+
 void test_serialize()
 {
 

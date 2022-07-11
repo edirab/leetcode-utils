@@ -2,7 +2,11 @@
 #include "leetcode_utils/trees/traversals.h"
 #include "leetcode_utils/random_ints.h"
 
-
+using leetcode_utils::RandomGenerator;
+using leetcode_utils::Generator;
+using leetcode_utils::print_vector;
+using leetcode_utils::Printer;
+using leetcode_utils::TreeNode;
 
 int main()
 {

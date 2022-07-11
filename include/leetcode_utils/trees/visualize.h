@@ -10,6 +10,9 @@ using std::cout;
 using std::string;
 using std::stack;
 
+namespace leetcode_utils
+{
+
 class Visualizer
 {
     public:
@@ -22,3 +25,5 @@ class Visualizer
     private:
 
 };
+
+} // namespace leetcode_utils

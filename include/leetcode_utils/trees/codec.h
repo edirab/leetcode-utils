@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <stack>
+#include "TreeNode_int.h"
 
 using std::cout;
 using std::string;
@@ -13,13 +14,16 @@ using std::pair;
 using std::queue;
 using std::stack;
 
-struct TreeNode 
+namespace leetcode_utils
 {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+
+// struct TreeNode 
+// {
+//       int val;
+//       TreeNode *left;
+//       TreeNode *right;
+//       TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+// };
 
 
 class Codec 
@@ -40,3 +44,5 @@ public:
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data);
 };
+
+} // namespace leetcode_utils
