@@ -6,6 +6,7 @@ using leetcode_utils::Generator;
 using leetcode_utils::RandomGenerator;
 using leetcode_utils::Visualizer;
 using leetcode_utils::TreeNode;
+using leetcode_utils::print_vector;
 
 int main()
 {
@@ -13,9 +14,10 @@ int main()
     auto vals = rg->unique_ints(true);
 
     Generator g;
-    //print_vector(vals);
+    cout << "# ";
+    print_vector(vals);
     TreeNode* root = g.create(vals);
-    //cout << "Tree created\n";
+    cout << "# Tree created\n";
 
     Visualizer vs;
 

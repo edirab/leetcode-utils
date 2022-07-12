@@ -77,4 +77,30 @@ TreeNode* Generator::create( vector<int> & values )
     return root;
 }
 
+// TODO
+void create_balanced_tree(TreeNode** root, vector<int> &nums, int start, int stop)
+{
+    if (*root == nullptr && start <= stop)
+    {
+        int middle = (start + stop) / 2;
+        *root = new TreeNode(nums[middle]);
+
+        // for left subtree
+        if (start != stop) create_balanced_tree(&((*root)->left), nums, start, middle-1 );
+        //for right subtree
+        if (start != stop) create_balanced_tree(&((*root)->right), nums, middle + 1, stop );
+    }
+    return;
+}
+
+
+TreeNode* Generator::create_balanced( vector<int>& values )
+{
+    TreeNode* root = nullptr;
+    create_balanced_tree(&root, values, 0, values.size() - 1);
+    return root;
+}
+
 } // namespace leetcode_utils
+
+

@@ -19,6 +19,8 @@ class Generator
         */
         TreeNode* create( vector<int>& values );    
 
+        TreeNode* create_balanced( vector<int>& values );
+
     private:
         /*
             Inserts new value in a tree
