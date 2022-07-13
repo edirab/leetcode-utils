@@ -22,9 +22,10 @@ using std::unordered_set;
 namespace leetcode_utils
 {
 
-/*
-    Those numbers are truely random from run to run
-    unless you will pass debug=true parameter
+/*!
+    \brief Class for generation random integers in a specified range
+    \details Those numbers are truely random from run to run
+             unless you will pass debug=true parameter
 */
 class RandomGenerator
 {
@@ -34,20 +35,24 @@ class RandomGenerator
             from(from), to(to), n(n)
         {};
 
-    /*
-        Generates sequence of n in [from, to) range
-        Can contain repetitions
+    /*!
+        \brief Generates sequence of n in [from, to) range
+               Can contain repetitions
+        \return vector of random integers
     */
     vector<int> ints(bool debug = false);
 
-    /*
-        Generates sequence of n in [from, to) range without repetitions
+    /*!
+        \brief Generates sequence of n in [from, to) range without repetitions.
+        \details NB: n cannot be greater then |from - to| value
+        \return vector of random integers
     */
     vector<int> unique_ints(bool debug = false);
 
-    /*
-        Generates sorted sequence of n in [from, to) range without repetitions
-        Suitable for bulding height-balanced trees, testing binary search etc.
+    /*!
+        \brief Generates sorted sequence of n in [from, to) range without repetitions
+        Suitable for bulding height-balanced trees with Generator class, testing binary search etc.
+        \return vector of random integers
     */
     vector<int> unique_sorted_ints(bool debug = false);
 

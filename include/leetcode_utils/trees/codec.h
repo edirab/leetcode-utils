@@ -47,22 +47,24 @@ public:
     const int null_number = -1111; ///< magic number for proper conversion of "null". Suitable for most cases
     
     /*!
-        \brief 
-        Преобразовать строку [1,2,3,null,null,4,5] в вектор строк
-        Преобразовать вектор строк в вектор чисел, null заменить на число, выходящее за диапазон
+        \brief Conversion of string to array of integers
+        \details Method converts a string with serialized tree (e.i. 1,2,3,null,null,4,5]) to vector of integers.
+        All "null"'s are substituted with magic number null_number
+        \param[in] data reference to string representation
+        \return vector of integers
     */
     vector<int> parse_string(const string &data);
 
     /*! 
         \brief Encodes a tree to a single string.
-        \param in root pointer to tree's root TreeNode struct
+        \param[in] root pointer to tree's root TreeNode struct
         \return data string with decoded tree
     */
     string serialize(TreeNode* root);
 
     /*! 
         \brief Decodes your encoded string data to tree.
-        \param in data string with encoded tree
+        \param[in] data string with encoded tree
         \return pointer to TreeNode struct
     */
     TreeNode* deserialize(string data);

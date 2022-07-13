@@ -16,28 +16,40 @@ using std::vector;
 namespace leetcode_utils
 {
 
+/*!
+    \brief Class for generating binary trees
+*/
 class Generator
 {
     public:
         /*!
-        Копирует содержимое из исходной области памяти в целевую область память
-        \param[out] dest Целевая область памяти
-        \param[in] src Исходная область памяти
-        \param[in] n Количество байтов, которые необходимо скопировать
+        \brief generates a pre-defined small binary tree. For debugging purposes
+        \return pointer to a root of newly created tree
         */
         TreeNode* build_example_tree();
 
-        /*
-            Creates unbalanced binary esearch tree.
-            Root will be a first array element
+        /*!
+            \brief Creates unbalanced binary search tree
+            \details Root will be a first array element
+            \param[in] values vector of ints
+            \return pointer to a root of newly created tree
         */
         TreeNode* create( vector<int>& values );    
 
+        /*!
+
+            \brief Creates hight-balanced binary search tree
+            \details Root will be a midst array element
+            \param[in] values a sorted vector of ints
+            \return pointer to a root of newly created tree
+        */
         TreeNode* create_balanced( vector<int>& values );
 
     private:
-        /*
-            Inserts new value in a tree
+        /*!
+            \brief Inserts new value in a tree
+            \param[in,out] root If *root is null then tree is empty and initial root node will be created
+            \param[in] val Value to insert
         */
         void insert( TreeNode** root, int val );
 };
