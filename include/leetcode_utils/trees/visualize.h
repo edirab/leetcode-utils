@@ -1,3 +1,11 @@
+/*!
+\file
+\brief Заголовочный файл с описанием классов
+
+Данный файл содержит в себе определения основных 
+классов, используемых в демонстрационной программе
+*/
+
 #pragma once
 
 #include "TreeNode_int.h"
@@ -16,7 +24,8 @@ namespace leetcode_utils
 class Visualizer
 {
     public:
-        /*
+        /*!
+            \brief 
             Converts tree to dot language representation.
             Suitable for graphviz
         */

@@ -1,3 +1,11 @@
+/*!
+\file
+\brief Заголовочный файл с описанием классов
+
+Данный файл содержит в себе определения основных 
+классов, используемых в демонстрационной программе
+*/
+
 #pragma once
 
 #include "TreeNode_int.h"
@@ -14,22 +22,45 @@ using std::pair;
 namespace leetcode_utils
 {
 
+/*!
+    Class for printing tree to standart output
+*/
 class Printer
 {
 public:
-    // Prints nodes in order (left, root, right)
+    /*! 
+        \brief Prints nodes in order (left, root, right)
+        \details Method traverses tree recursively and prints nodes
+        \param in root Pointer to struct TreeNode
+    */
     void in_order(TreeNode *root);
 
-    // Prints nodes in preorder (root, left, right)
+    /*! 
+        \brief Prints nodes in preorder (root, left, right)
+        \details Method traverses tree recursively and prints nodes
+        \param in root Pointer to struct TreeNode
+    */
     void pre_order(TreeNode *root);
 
-    // Prints nodes in postorder (left, right, root)
+    /*! 
+        \brief Prints nodes in postorder (left, right, root)
+        \details Method traverses tree recursively and prints nodes
+        \param in root Pointer to struct TreeNode
+    */
     void post_order(TreeNode *root);
 
-    // Print nodes in level order
+    /*! 
+        \brief Print nodes in level order
+        \details Method traverses tree in level-order and printes nodes.
+                 Level numbers are also printed
+        \param in root Pointer to struct TreeNode
+    */
     void breadt_first(TreeNode* root);
 };
 
+/*!
+    Class for obtainingt tree nodes in certain order
+*/
 class Getter
 {
     public:

@@ -1,8 +1,33 @@
 cmake_minimum_required(VERSION 3.1...3.22)
 
 project(leetcode_utils
+        VERSION 1.0.0
         LANGUAGES CXX
-        DESCRIPTION "Utils for binary trees"
+        DESCRIPTION "Utils for leetcode problems: arrays and binary trees"
+)
+
+
+set(CMAKE_DEBUG_POSTFIX "d")
+
+add_compile_options(
+    # -Werror
+
+    # -Wall
+    # -Wextra
+    # -Wpedantic
+
+    # -Wcast-align
+    # -Wcast-qual
+    # -Wconversion
+    # -Wctor-dtor-privacy
+    # -Wenum-compare
+    # -Wfloat-equal
+    # -Wnon-virtual-dtor
+    # -Wold-style-cast
+    # -Woverloaded-virtual
+    # -Wredundant-decls
+    # -Wsign-conversion
+    # -Wsign-promo
 )
 
 add_library( leetcode_utils SHARED
@@ -13,12 +38,21 @@ add_library( leetcode_utils SHARED
     src/visualize.cpp
 )
 
+target_compile_features(leetcode_utils PUBLIC cxx_std_20)
+
 target_include_directories( leetcode_utils
     PUBLIC
     ${PROJECT_SOURCE_DIR}/include
 )
 
-add_subdirectory(tests)
+
+message(STATUS "Current configuration: ${CMAKE_BUILD_TYPE}")
+option(ENABLE_TESTS "Enabling building tests" 0)
+
+if ( ENABLE_TESTS )
+    message(STATUS "Enabling building tests...")
+    add_subdirectory(tests)
+endif()
 
 # Installs to /usr/local/lib
 install (TARGETS leetcode_utils

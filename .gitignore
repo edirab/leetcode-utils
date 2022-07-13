@@ -11,3 +11,7 @@ _wip/
 
 
 Makefile
+
+# Generated
+doc/html/
+doc/latex/
