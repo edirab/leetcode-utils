@@ -6,7 +6,7 @@ project(leetcode_utils
         DESCRIPTION "Utils for leetcode problems: arrays and binary trees"
 )
 
-
+find_package(GTest REQUIRED)
 set(CMAKE_DEBUG_POSTFIX "d")
 
 add_compile_options(
@@ -47,7 +47,7 @@ target_include_directories( leetcode_utils
 
 
 message(STATUS "Current configuration: ${CMAKE_BUILD_TYPE}")
-option(ENABLE_TESTS "Enabling building tests" 0)
+set(ENABLE_TESTS ON)
 
 if ( ENABLE_TESTS )
     message(STATUS "Enabling building tests...")
