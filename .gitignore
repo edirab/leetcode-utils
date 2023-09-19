@@ -1,7 +1,19 @@
 .vscode/
+
+# any build folder in a project
 build/
 build_debug/
 build_ninja/
+
+# gcov profiling files
+*.gcda
+*.gcno
+
+# lcov report file
+*.info
+
+# 
+out/
 
 _wip/
 /visualize/
