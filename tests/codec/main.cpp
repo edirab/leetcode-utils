@@ -10,6 +10,7 @@
 */
 
 #include "leetcode_utils/trees/codec.h"
+#include <gtest/gtest.h>
 
 using namespace leetcode_utils;
 
