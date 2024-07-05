@@ -1,9 +1,6 @@
 /*!
 \file
-\brief Заголовочный файл с описанием классов
-
-Данный файл содержит в себе определения основных 
-классов, используемых в демонстрационной программе
+\brief Class for serialization and deserialization of a tree
 */
 
 #pragma once
@@ -24,14 +21,8 @@ using std::stack;
 
 namespace leetcode_utils
 {
-
-// struct TreeNode 
-// {
-//       int val;
-//       TreeNode *left;
-//       TreeNode *right;
-//       TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-// };
+namespace trees
+{
 
 /*!
     \brief Class for serializing and deserializing trees
@@ -70,4 +61,5 @@ public:
     TreeNode* deserialize(string data);
 };
 
+} // trees
 } // namespace leetcode_utils

@@ -21,6 +21,8 @@ using std::pair;
 
 namespace leetcode_utils
 {
+namespace trees
+{
 
 /*!
     Class for printing tree to standart output
@@ -70,4 +72,5 @@ class Getter
         void do_inorder(TreeNode *root, vector<int> &result) ;
 };
 
+} // trees
 } // namespace leetcode_utils

@@ -1,14 +1,14 @@
 #include "leetcode_utils/trees/generator.h"
 #include "leetcode_utils/trees/traversals.h"
-#include "leetcode_utils/random_ints.h"
+#include "leetcode_utils/arrays/random_ints.h"
 #include <gtest/gtest.h>
 #include <memory>
 
-using leetcode_utils::RandomGenerator;
-using leetcode_utils::Generator;
-using leetcode_utils::print_vector;
-using leetcode_utils::Printer;
-using leetcode_utils::TreeNode;
+using leetcode_utils::arrays::RandomGenerator;
+using leetcode_utils::arrays::print_vector;
+using leetcode_utils::trees::Generator;
+using leetcode_utils::trees::Printer;
+using leetcode_utils::trees::TreeNode;
 using std::unique_ptr;
 
 TEST(TraversalsTest, Printers_WhenGivenExampleTree_ThenPrintPreOrder)

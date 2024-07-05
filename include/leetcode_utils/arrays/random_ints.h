@@ -21,6 +21,8 @@ using std::unordered_set;
 
 namespace leetcode_utils
 {
+namespace arrays
+{
 
 /*!
     \brief Class for generation random integers in a specified range
@@ -65,4 +67,5 @@ class RandomGenerator
 
 void print_vector(vector<int> &v);
 
+} // arrays
 } // namespace leetcode_utils

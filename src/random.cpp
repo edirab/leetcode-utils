@@ -1,9 +1,11 @@
-#include "leetcode_utils/random_ints.h"
+#include "leetcode_utils/arrays/random_ints.h"
 
 //using leetcode_utils::RandomGenerator;
 //using leetcode_utils::print_vector;
 
 namespace leetcode_utils
+{
+namespace arrays
 {
 
 vector<int> RandomGenerator::ints(bool debug)
@@ -117,4 +119,5 @@ void print_vector(vector<int> &v)
     return;
 }
 
+} // arrays
 } // namespace leetcode_utils

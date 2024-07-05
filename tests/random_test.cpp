@@ -1,11 +1,11 @@
 #include <iostream>
-#include "leetcode_utils/random_ints.h"
+#include "leetcode_utils/arrays/random_ints.h"
 #include <gtest/gtest.h>
 #include <memory>
 
 using std::cout;
-using leetcode_utils::RandomGenerator;
-using leetcode_utils::print_vector;
+using leetcode_utils::arrays::RandomGenerator;
+using leetcode_utils::arrays::print_vector;
 using std::unique_ptr;
 
 

@@ -5,6 +5,8 @@
 // using leetcode_utils::Getter;
 namespace leetcode_utils 
 {
+namespace trees
+{
 
 void Printer::in_order(TreeNode *root) 
 {
@@ -99,4 +101,5 @@ vector<int> Getter::inorderTraversal(TreeNode* root)
     return result;
 }
 
+} // trees
 } // namespace leetcode_utils

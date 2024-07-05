@@ -1,9 +1,6 @@
 /*!
 \file
-\brief Заголовочный файл с описанием классов
-
-Данный файл содержит в себе определения основных 
-классов, используемых в демонстрационной программе
+\brief 
 */
 
 #pragma once
@@ -19,6 +16,8 @@ using std::string;
 using std::stack;
 
 namespace leetcode_utils
+{
+namespace trees
 {
 
 /*!
@@ -43,4 +42,5 @@ class Visualizer
 
 };
 
+} // trees
 } // namespace leetcode_utils

@@ -1,9 +1,6 @@
 /*!
 \file
-\brief Заголовочный файл с описанием классов
-
-Данный файл содержит в себе определения основных 
-классов, используемых в демонстрационной программе
+\brief Class for a tree creation from array
 */
 
 #pragma once
@@ -14,6 +11,8 @@
 using std::vector;
 
 namespace leetcode_utils
+{
+namespace trees
 {
 
 /*!
@@ -54,4 +53,5 @@ class Generator
         void insert( TreeNode** root, int val );
 };
 
+} // trees
 } // namespace leetcode_utils

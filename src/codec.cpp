@@ -14,6 +14,8 @@
 
 namespace leetcode_utils 
 {
+namespace trees
+{
 
 vector<int> Codec::parse_string(const string &data)
 {
@@ -138,4 +140,5 @@ TreeNode* Codec::deserialize(string data)
     return root;
 }
 
+} // trees
 } // namespace leetcode_utils

@@ -12,7 +12,7 @@
 #include "leetcode_utils/trees/codec.h"
 #include <gtest/gtest.h>
 
-using namespace leetcode_utils;
+using namespace leetcode_utils::trees;
 
 void test_serialize()
 {
@@ -86,8 +86,6 @@ int main()
     //c.parse_string(data);
     TreeNode* root_1 = c.deserialize(data);
     cout << c.serialize(root_1) << "\n";
-    
-
 
     return 0;
 }

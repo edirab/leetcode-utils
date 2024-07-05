@@ -1,5 +1,5 @@
+#include "leetcode_utils/arrays/random_ints.h"
 #include "leetcode_utils/trees/generator.h"
-#include "leetcode_utils/random_ints.h"
 #include "leetcode_utils/trees/visualize.h"
 #include "leetcode_utils/trees/traversals.h"
 #include <memory>
@@ -8,12 +8,13 @@
 
 using std::vector;
 using std::unique_ptr;
-using leetcode_utils::RandomGenerator;
-using leetcode_utils::Generator;
-using leetcode_utils::print_vector;
-using leetcode_utils::TreeNode;
-using leetcode_utils::Visualizer;
-using leetcode_utils::Getter;
+using leetcode_utils::arrays::RandomGenerator;
+using leetcode_utils::arrays::print_vector;
+using leetcode_utils::trees::Generator;
+using leetcode_utils::trees::Printer;
+using leetcode_utils::trees::TreeNode;
+using leetcode_utils::trees::Visualizer;
+using leetcode_utils::trees::Getter;
 
 TEST(BinaryTreeGenertorTest, CreateUnbalancedTree_WhenGivenData_ThenRootNotNull) {
     vector<int> vals = {1, 2, 3};

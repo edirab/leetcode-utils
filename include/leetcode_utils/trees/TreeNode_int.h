@@ -1,14 +1,13 @@
 /*!
 \file
-\brief Заголовочный файл с описанием классов
-
-Данный файл содержит в себе определения основных 
-классов, используемых в демонстрационной программе
+\brief
 */
 
 #pragma once
 
 namespace leetcode_utils
+{
+namespace trees
 {
 
 /*!
@@ -30,4 +29,5 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+} // trees
 } // namespace leetcode_utils

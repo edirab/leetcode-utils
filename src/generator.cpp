@@ -5,6 +5,8 @@
 
 namespace leetcode_utils 
 {
+namespace trees
+{
 
 TreeNode* Generator::build_example_tree() 
 {
@@ -101,6 +103,5 @@ TreeNode* Generator::create_balanced( vector<int>& values )
     return root;
 }
 
+} // trees
 } // namespace leetcode_utils
-
-

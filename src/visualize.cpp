@@ -4,6 +4,8 @@
 
 namespace leetcode_utils 
 {
+namespace trees
+{
 
 string Visualizer::to_dot(TreeNode* root, bool draw_nulls)
 {
@@ -53,4 +55,5 @@ string Visualizer::to_dot(TreeNode* root, bool draw_nulls)
     return res;
 }
 
+} // trees
 } // namespace leetcode_utils
