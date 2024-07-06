@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.1...3.22)
+cmake_minimum_required(VERSION 3.13...3.22)
 
 project(leetcode_utils
-        VERSION 1.0.0
+        VERSION 1.1.0
         LANGUAGES CXX
         DESCRIPTION "Utils for leetcode problems: arrays and binary trees"
 )
@@ -30,13 +30,10 @@ add_compile_options(
     # -Wsign-promo
 )
 
-add_library( leetcode_utils SHARED
-    src/codec.cpp
-    src/traversals.cpp
-    src/generator.cpp
-    src/random.cpp
-    src/visualize.cpp
-)
+add_library( leetcode_utils SHARED "" )
+add_subdirectory(src/trees)
+add_subdirectory(src/arrays)
+add_subdirectory(src/lists)
 
 target_compile_features(leetcode_utils PUBLIC cxx_std_20)
 
@@ -44,7 +41,6 @@ target_include_directories( leetcode_utils
     PUBLIC
     ${PROJECT_SOURCE_DIR}/include
 )
-
 
 message(STATUS "Current configuration: ${CMAKE_BUILD_TYPE}")
 set(ENABLE_TESTS ON)
