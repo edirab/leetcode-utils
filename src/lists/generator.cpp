@@ -10,7 +10,9 @@ namespace lists
 using leetcode_utils::arrays::RandomGenerator;
 
 ListNode* Generator::from_rand_ints(int n) {
-    RandomGenerator rg(0, 20, 8);
+    int lower_bound = 0;
+    int upper_bound = n;
+    RandomGenerator rg(lower_bound, upper_bound, n);
     auto res = rg.unique_sorted_ints();
 
     ListNode* head = new ListNode{};

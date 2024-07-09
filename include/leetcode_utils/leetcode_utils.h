@@ -10,3 +10,5 @@
 #include "trees/visualize.h"
 
 #include "trees/utils/find.h"
+
+#include "graphs/GraphNode_int.h"
