@@ -8,47 +8,38 @@ namespace leetcode_utils
 namespace arrays
 {
 
-vector<int> RandomGenerator::ints(bool debug)
-{
-    vector<int> result;
-    std::mt19937* gen = nullptr;
+RandomGenerator::RandomGenerator() : RandomGenerator(false) {}
 
-    
+RandomGenerator::RandomGenerator(bool debug)
+{
     if (!debug)
     {
         std::random_device rd; // obtain a random number from hardware
-        gen = new std::mt19937(rd());// seed the generator
+        gen = std::make_unique<std::mt19937>(rd());// seed the generator
     }
     else
     {
-        gen = new std::mt19937();
+        gen = std::make_unique<std::mt19937>();
     }
-    std::uniform_int_distribution<> distr(this->from, this->to - 1); // define the range
+}
 
-    for(int n = 0; n < this->n; ++n)
+vector<int> RandomGenerator::ints(int from, int to, int n)
+{
+    vector<int> result;
+    std::uniform_int_distribution<> distr(from, to - 1); // define the range
+
+    for(int i = 0; i < n; ++i)
         result.push_back( distr(*gen) );
 
     return result;
 }
 
-vector<int> RandomGenerator::unique_ints(bool debug)
+vector<int> RandomGenerator::unique_ints(int from, int to, int n)
 {
     vector<int> result;
-    if ( n <=  (this->to - this->from)  )
+    if ( n <=  (to - from)  )
     {
-        std::mt19937* gen = nullptr;
-
-        if (!debug)
-        {
-            std::random_device rd; // obtain a random number from hardware
-            gen = new std::mt19937(rd());// seed the generator
-        }
-        else
-        {
-            gen = new std::mt19937();
-        }
-
-        std::uniform_int_distribution<> distr(this->from, this->to - 1); // define the range
+        std::uniform_int_distribution<> distr(from, to - 1); // define the range
         unordered_set<int> unique;
 
         while( unique.size() < n )
@@ -64,41 +55,30 @@ vector<int> RandomGenerator::unique_ints(bool debug)
     else
     {
         cout << "Wrong range specified. Not enough uniqe nums in a range\n";
+        throw "Wrong range specified. Not enough uniqe nums in a range";
     }
     return result;
 }
 
 
-vector<int> RandomGenerator::unique_sorted_ints(bool debug)
+vector<int> RandomGenerator::unique_sorted_ints(int from, int to, int n)
 {
     vector<int> result;
-    if ( n <=  (this->to - this->from)  )
+    if ( n <=  (to - from)  )
     {
-        std::mt19937* gen = nullptr;
+        std::uniform_int_distribution<> distr(from, to - 1);
+        set<int> unique_elems_set;
 
-        if (!debug)
-        {
-            std::random_device rd; // obtain a random number from hardware
-            gen = new std::mt19937(rd());// seed the generator
-        }
-        else
-        {
-            gen = new std::mt19937();
-        }
-
-        std::uniform_int_distribution<> distr(this->from, this->to - 1);
-        set<int> unique;
-
-        while( unique.size() < n )
+        while( unique_elems_set.size() < n )
         {
             int val =  distr(*gen);
-            if ( unique.count(val) == 0 )
+            if ( unique_elems_set.count(val) == 0 )
             {
-                unique.insert(val);
+                unique_elems_set.insert(val);
             }
         }
 
-        for (auto elem : unique)
+        for (auto elem : unique_elems_set)
         {
             result.push_back(elem);
         }

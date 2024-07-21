@@ -10,8 +10,8 @@ using leetcode_utils::trees::TreeNode;
 
 int main()
 {
-    RandomGenerator* rg = new RandomGenerator(0, 20, 10);
-    auto vals = rg->unique_ints(true);
+    RandomGenerator* rg = new RandomGenerator(true);
+    auto vals = rg->unique_ints(0, 20, 10);
 
     Generator g;
     cout << "# ";

@@ -12,8 +12,8 @@ using leetcode_utils::arrays::RandomGenerator;
 ListNode* Generator::from_rand_ints(int n) {
     int lower_bound = 0;
     int upper_bound = n;
-    RandomGenerator rg(lower_bound, upper_bound, n);
-    auto res = rg.unique_sorted_ints();
+    RandomGenerator rg{};
+    auto res = rg.unique_sorted_ints(lower_bound, upper_bound, n);
 
     ListNode* head = new ListNode{};
     ListNode* curr = head;

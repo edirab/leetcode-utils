@@ -43,8 +43,8 @@ TEST(TraversalsTest, Printers_WhenGivenExampleTree_ThenPrintPostOrder)
 
 TEST(TraversalsTest, Printers_WhenFromInts_ThenPrintBreadthFirst)
 {
-    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(0, 20, 10);
-    auto vals = rg->unique_ints(true);
+    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(true);
+    auto vals = rg->unique_ints(0, 20, 10);
 
     print_vector(vals);
     Generator g;

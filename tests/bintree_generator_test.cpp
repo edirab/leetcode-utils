@@ -43,8 +43,8 @@ TEST(BinaryTreeGenertorTest, CreateUnbalancedTree_WhenGivenData_ThenLeftSubtrees
 }
 
 TEST(BinaryTreeGenertorTest, CreateAndTraverseUnbalancedTree_WhenFromInts_ThenInorderTraversalIsIncreasing) {
-    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(0, 20, 10);
-    auto vals = rg->unique_ints(true);
+    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(true);
+    auto vals = rg->unique_ints(0, 20, 10);
     ASSERT_EQ(vals.size(), 10);
 
     cout << "# ";
@@ -81,8 +81,8 @@ TEST(BinaryTreeGenertorTest, CreateBalancedTree_WhenFromInts_ThenHasLeftAndRight
 
 TEST(BinaryTreeGenertorTest, CreateBalancedTree_WhenGivenData_ThenHasLeftAndRightSubtree)
 {
-    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(0, 20, 10);
-    auto vals = rg->unique_sorted_ints(true);
+    unique_ptr<RandomGenerator> rg = std::make_unique<RandomGenerator>(true);
+    auto vals = rg->unique_sorted_ints(0, 20, 10);
     ASSERT_EQ(vals.size(), 10);
     cout << "# ";
     print_vector(vals);

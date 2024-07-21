@@ -3,10 +3,11 @@ message(STATUS "Building tests: ")
 
 enable_testing()
 
+add_subdirectory(arrays)
+
 add_executable(
   leetcode_utils_tests
   printing_traversals.cpp
-  random_test.cpp
   bintree_generator_test.cpp
 )
 target_link_libraries(

@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include <memory>
 #include <vector>
 #include <random>
 #include <set>
@@ -33,35 +34,32 @@ class RandomGenerator
 {
     public:
         RandomGenerator();
-        RandomGenerator(int from, int to, int n) :
-            from(from), to(to), n(n)
-        {};
+        RandomGenerator(bool debug);
 
     /*!
         \brief Generates sequence of n in [from, to) range
                Can contain repetitions
         \return vector of random integers
     */
-    vector<int> ints(bool debug = false);
+    vector<int> ints(int from, int to, int n);
 
     /*!
         \brief Generates sequence of n in [from, to) range without repetitions.
         \details NB: n cannot be greater then |from - to| value
         \return vector of random integers
     */
-    vector<int> unique_ints(bool debug = false);
+    vector<int> unique_ints(int from, int to, int n);
 
     /*!
         \brief Generates sorted sequence of n in [from, to) range without repetitions
         Suitable for bulding height-balanced trees with Generator class, testing binary search etc.
         \return vector of random integers
     */
-    vector<int> unique_sorted_ints(bool debug = false);
+    vector<int> unique_sorted_ints(int from, int to, int n);
 
     private:
-        int from{0};
-        int to{100};
-        int n{10};
+        bool debug{false};
+        std::unique_ptr<std::mt19937> gen;
 };
 
 
