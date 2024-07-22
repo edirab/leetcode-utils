@@ -14,6 +14,7 @@
 #include <set>
 #include <unordered_set>
 #include <iostream>
+#include "random_exceptions.h"
 
 using std::cout;
 using std::vector;
@@ -57,13 +58,18 @@ class RandomGenerator
     */
     vector<int> unique_sorted_ints(int from, int to, int n);
 
+    void reset();
+
     private:
         bool debug{false};
         std::unique_ptr<std::mt19937> gen;
+
+        void checkRange(int from, int to);
+        void checkCapacity(int from, int to, int nums);
 };
 
 
 void print_vector(vector<int> &v);
 
-} // arrays
+} // namespace arrays
 } // namespace leetcode_utils

@@ -2,6 +2,7 @@
 
 //using leetcode_utils::RandomGenerator;
 //using leetcode_utils::print_vector;
+using leetcode_utils::arrays::IncorrectRangeException;
 
 namespace leetcode_utils
 {
@@ -23,8 +24,24 @@ RandomGenerator::RandomGenerator(bool debug)
     }
 }
 
+void RandomGenerator::checkRange(int from, int to) {
+    if (from >= to) {
+        throw IncorrectRangeException(from, to);
+    }
+    return;
+}
+
+void RandomGenerator::checkCapacity(int from, int to, int nums) {
+    if (nums >  (to - from))
+    {
+        throw NotEnoughCapaciryException(from, to, nums);
+    }
+}
+
 vector<int> RandomGenerator::ints(int from, int to, int n)
 {
+    checkRange(from, to);
+
     vector<int> result;
     std::uniform_int_distribution<> distr(from, to - 1); // define the range
 
@@ -36,26 +53,22 @@ vector<int> RandomGenerator::ints(int from, int to, int n)
 
 vector<int> RandomGenerator::unique_ints(int from, int to, int n)
 {
-    vector<int> result;
-    if ( n <=  (to - from)  )
-    {
-        std::uniform_int_distribution<> distr(from, to - 1); // define the range
-        unordered_set<int> unique;
+    checkRange(from, to);
+    checkCapacity(from, to, n);
 
-        while( unique.size() < n )
-        {
-            int val =  distr(*gen);
-            if ( unique.count(val) == 0 )
-            {
-                result.push_back( val );
-                unique.insert(val);
-            }
-        }
-    }
-    else
+    vector<int> result;
+
+    std::uniform_int_distribution<> distr(from, to - 1); // define the range
+    unordered_set<int> unique;
+
+    while( unique.size() < n )
     {
-        cout << "Wrong range specified. Not enough uniqe nums in a range\n";
-        throw "Wrong range specified. Not enough uniqe nums in a range";
+        int val =  distr(*gen);
+        if ( unique.count(val) == 0 )
+        {
+            result.push_back( val );
+            unique.insert(val);
+        }
     }
     return result;
 }
@@ -63,33 +76,35 @@ vector<int> RandomGenerator::unique_ints(int from, int to, int n)
 
 vector<int> RandomGenerator::unique_sorted_ints(int from, int to, int n)
 {
+    checkRange(from, to);
+    checkCapacity(from, to, n);
+
     vector<int> result;
-    if ( n <=  (to - from)  )
+
+    std::uniform_int_distribution<> distr(from, to - 1);
+    set<int> unique_elems_set;
+
+    while( unique_elems_set.size() < n )
     {
-        std::uniform_int_distribution<> distr(from, to - 1);
-        set<int> unique_elems_set;
-
-        while( unique_elems_set.size() < n )
+        int val =  distr(*gen);
+        if ( unique_elems_set.count(val) == 0 )
         {
-            int val =  distr(*gen);
-            if ( unique_elems_set.count(val) == 0 )
-            {
-                unique_elems_set.insert(val);
-            }
-        }
-
-        for (auto elem : unique_elems_set)
-        {
-            result.push_back(elem);
+            unique_elems_set.insert(val);
         }
     }
-    else
+
+    for (auto elem : unique_elems_set)
     {
-        cout << "Wrong range specified. Not enough uniqe nums in a range\n";
+        result.push_back(elem);
     }
+
     return result;
 }
 
+// TODO: finish
+void RandomGenerator::reset() {
+    gen->seed();
+}
 
 void print_vector(vector<int> &v)
 {
