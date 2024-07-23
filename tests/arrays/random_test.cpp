@@ -1,7 +1,7 @@
 #include <iostream>
-#include "leetcode_utils/arrays/random_ints.h"
-#include <gtest/gtest.h>
 #include <memory>
+#include <gtest/gtest.h>
+#include "leetcode_utils/arrays/random_ints.h"
 
 using std::cout;
 using leetcode_utils::arrays::RandomGenerator;

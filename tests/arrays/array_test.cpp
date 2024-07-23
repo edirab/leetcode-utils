@@ -1,6 +1,6 @@
-#include <leetcode_utils/leetcode_utils.h>
-#include <gtest/gtest.h>
 #include <unordered_set>
+#include <gtest/gtest.h>
+#include "leetcode_utils/leetcode_utils.h"
 
 using leetcode_utils::arrays::RandomGenerator;
 using std::unordered_set;

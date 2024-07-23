@@ -4,6 +4,7 @@ message(STATUS "Building tests: ")
 enable_testing()
 
 add_subdirectory(arrays)
+add_subdirectory(lists)
 
 add_executable(
   leetcode_utils_tests

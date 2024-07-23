@@ -1,9 +1,7 @@
 /*!
 \file
-\brief Заголовочный файл с описанием классов
+\brief 
 
-Данный файл содержит в себе определения основных 
-классов, используемых в демонстрационной программе
 */
 
 #pragma once
@@ -54,7 +52,7 @@ class RandomGenerator
     /*!
         \brief Generates sorted sequence of n in [from, to) range without repetitions
         Suitable for bulding height-balanced trees with Generator class, testing binary search etc.
-        \return vector of random integers
+        \return vector of random integers sorted in ascending order
     */
     vector<int> unique_sorted_ints(int from, int to, int n);
 
@@ -64,7 +62,15 @@ class RandomGenerator
         bool debug{false};
         std::unique_ptr<std::mt19937> gen;
 
+        /*!
+            \brief Checks range. Throws exception if invalid
+        */
         void checkRange(int from, int to);
+
+        /*!
+            \brief Checks capacity based on start and end of a range. 
+            Throws exception if invalid. Used for ranges w/ unique elements
+        */
         void checkCapacity(int from, int to, int nums);
 };
 

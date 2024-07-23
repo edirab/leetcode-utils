@@ -21,10 +21,15 @@ class Generator {
 
 public:
 
-    ListNode* from_range();
-    ListNode* from_rand_ints(int n);
+    ListNode* from_vector(vector<int>& nums);
+    ListNode* from_ints(int from, int to, int n);
+    ListNode* from_unique_ints(int from, int to, int n);
+    ListNode* from_unique_sorted_ints(int from, int to, int n);
+
+    ListNode* clone(ListNode* l1);
+    vector<int> to_vector(ListNode* l1);
 
 };
 
-} // lists
-} // leetcode_utils
+} // namespace lists
+} // namespace leetcode_utils
