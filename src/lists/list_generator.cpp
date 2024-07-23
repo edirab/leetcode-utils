@@ -1,5 +1,5 @@
 #include "leetcode_utils/lists/ListNode_int.h"
-#include "leetcode_utils/lists/generator.h"
+#include "leetcode_utils/lists/list_generator.h"
 #include "leetcode_utils//arrays/random_ints.h"
 
 namespace leetcode_utils
@@ -9,7 +9,7 @@ namespace lists
 
 using leetcode_utils::arrays::RandomGenerator;
 
-ListNode* Generator::from_vector(vector<int>& nums) 
+ListNode* ListGenerator::from_vector(vector<int>& nums) 
 {
     if (nums.empty()) {
         return nullptr;
@@ -27,7 +27,7 @@ ListNode* Generator::from_vector(vector<int>& nums)
     return head;
 }
 
-ListNode* Generator::from_ints(int from, int to, int n)
+ListNode* ListGenerator::from_ints(int from, int to, int n)
 {
     RandomGenerator rg{};
     auto res = rg.ints(from, to, n);
@@ -36,7 +36,7 @@ ListNode* Generator::from_ints(int from, int to, int n)
     return head;
 }
 
-ListNode* Generator::from_unique_ints(int from, int to, int n)
+ListNode* ListGenerator::from_unique_ints(int from, int to, int n)
 {
     RandomGenerator rg{};
     auto res = rg.unique_ints(from, to, n);
@@ -45,7 +45,7 @@ ListNode* Generator::from_unique_ints(int from, int to, int n)
     return head;
 }
 
-ListNode* Generator::from_unique_sorted_ints(int from, int to, int n)
+ListNode* ListGenerator::from_unique_sorted_ints(int from, int to, int n)
 {
     RandomGenerator rg{};
     auto res = rg.unique_sorted_ints(from, to, n);
@@ -54,7 +54,7 @@ ListNode* Generator::from_unique_sorted_ints(int from, int to, int n)
     return head;
 }
 
-ListNode* Generator::clone(ListNode* l1) 
+ListNode* ListGenerator::clone(ListNode* l1) 
 {
     if (l1 == nullptr) {
         return nullptr;
@@ -73,7 +73,7 @@ ListNode* Generator::clone(ListNode* l1)
     return head_new;
 }
 
-vector<int> Generator::to_vector(ListNode* l1) 
+vector<int> ListGenerator::to_vector(ListNode* l1) 
 {
     vector<int> res;
     ListNode* curr = l1;

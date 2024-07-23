@@ -1,5 +1,7 @@
+#pragma once
+
 #include "ListNode_int.h"
-#include "../arrays/random_ints.h"
+#include "leetcode_utils/leetcode_utils.h"
 
 namespace leetcode_utils
 {
@@ -17,7 +19,7 @@ void print(ListNode* head) {
     return;
 }
 
-class Generator {
+class ListGenerator {
 
 public:
 

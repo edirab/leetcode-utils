@@ -2,7 +2,7 @@
 
 #include "arrays/random_ints.h"
 
-#include "lists/generator.h"
+#include "lists/list_generator.h"
 
 #include "trees/codec.h"
 #include "trees/generator.h"
