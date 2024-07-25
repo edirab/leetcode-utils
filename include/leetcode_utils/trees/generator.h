@@ -16,7 +16,7 @@ namespace trees
 {
 
 /*!
-    \brief Class for generating binary trees
+    \brief Class for generating binary search trees
 */
 class Generator
 {
@@ -36,7 +36,6 @@ class Generator
         TreeNode* create( vector<int>& values );    
 
         /*!
-
             \brief Creates hight-balanced binary search tree
             \details Root will be a midst array element
             \param[in] values a sorted vector of ints

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13...3.22)
 
 project(leetcode_utils
-        VERSION 1.1.3
+        VERSION 1.1.4
         LANGUAGES CXX
-        DESCRIPTION "Utils for leetcode problems: arrays, binary trees, lists and graphs"
+        DESCRIPTION "Utils for leetcode problems: arrays, lists, binary search trees, and graphs"
 )
 
 find_package(GTest REQUIRED)

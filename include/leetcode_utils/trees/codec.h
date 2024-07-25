@@ -4,20 +4,12 @@
 */
 
 #pragma once
-
 #include <string>
-#include <queue>
 #include <vector>
-#include <iostream>
-#include <stack>
 #include "TreeNode_int.h"
 
-using std::cout;
 using std::string;
 using std::vector;
-using std::pair;
-using std::queue;
-using std::stack;
 
 namespace leetcode_utils
 {
@@ -39,8 +31,8 @@ public:
     
     /*!
         \brief Conversion of string to array of integers
-        \details Method converts a string with serialized tree (e.i. 1,2,3,null,null,4,5]) to vector of integers.
-        All "null"'s are substituted with magic number null_number
+        \details Method converts a string with serialized tree (e.i. `[1,2,3,null,null,4,5]`) to vector of integers.
+        All `null`'s are substituted with magic number null_number
         \param[in] data reference to string representation
         \return vector of integers
     */

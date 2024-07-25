@@ -8,9 +8,11 @@
     #desereialize
 */
 
+#include <queue>
 #include "leetcode_utils/trees/codec.h"
 
-//using namespace leetcode_utils;
+using std::queue;
+
 
 namespace leetcode_utils 
 {
@@ -140,5 +142,5 @@ TreeNode* Codec::deserialize(string data)
     return root;
 }
 
-} // trees
+} // namespace trees
 } // namespace leetcode_utils
